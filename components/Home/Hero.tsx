@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Hero = () => {
   return (
-    <div className='relative text-center h-screen'>
+    <div className='relative text-center hero-height' >
       <div className="absolute inset-0 z-0">
         <Image
           src="/side-close-up-view-spices-sauce-spices-onions-garlic-bottle-oil-tomatoes-lemon.jpg"
