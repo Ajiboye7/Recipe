@@ -1,8 +1,15 @@
-import {configureStore} "@reduxjs/toolkit";
-import {ketoApi} from "../Redux/KetoApi"
+import { configureStore } from '@reduxjs/toolkit';
+import recipeReducer from './RecipeSlice';
+import { useDispatch } from 'react-redux';
 
-export default configureStore({
-    reducer: {
-        [ketoApi.reducerpath] : ketoApi.reducer
-    },
-})
+const store = configureStore({
+  reducer: {
+    recipes: recipeReducer,
+  },
+});
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+export const useAppDispatch = () => useDispatch<AppDispatch>();
+
+export default store;
