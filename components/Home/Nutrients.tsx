@@ -23,7 +23,7 @@ const Nutrients = () => {
       id: 3,
       title: "carbonhydrate",
       details:
-        "Carbohydrates are the body's primary source of energy. They are found in foods like grains, fruits, vegetables, and legumes, and are broken down into glucose to fuel cells, organs, and muscles.",
+        "Carbohydrates are the body's primary source of energy. They are found in foods like grains, fruits, vegetables, and legumes, and are broken down into glucose.",
       route: "nutrients/carbonhydrate",
     },
 
@@ -36,13 +36,13 @@ const Nutrients = () => {
     },
   ];
   return (
-    <div className="grid grid-cols-4 text-center">
+    <div className="grid gap-2 grid-cols-4 text-center ">
       {Nutrients.map((nutrient) => (
-        <div key={nutrient.id} className="mt-3">
-          <h2 className="pb-2">{nutrient.title}</h2>
-          <p className="pb-2">{nutrient.details}</p>
+        <div key={nutrient.id} className="mt-3 card flex flex-col justify-between">
+          <h2 className="mb-4">{nutrient.title}</h2>
+          <p className="">{nutrient.details}</p>
           <Link href={nutrient.route}>
-            <button className="">
+            <button className="mt-6">
               <p>Explore</p>
             </button>
           </Link>

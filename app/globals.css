@@ -5,3 +5,13 @@
 .hero-height {
   height: 80vh; /* or another appropriate value */
 }
+
+.card {
+  @apply 
+   bg-gray-200
+    shadow-sm 
+    rounded-md 
+    py-3 px-4 my-4 
+    relative 
+    overflow-hidden;
+}
