@@ -1,4 +1,4 @@
-import axios from 'axios';
+/*import axios from 'axios';
 
 const API_HOST = 'keto-diet.p.rapidapi.com';
 const API_KEY = 'cdd55f2df6msh1337361e79a64f1p1b12c6jsn48d27f4e316a';
@@ -99,4 +99,30 @@ export const fetchRecipesByProtein = async (minProtein: number, maxProtein: numb
     },
   });
   return response.data;
+};*/
+
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+
+const baseURL = "https://keto-diet.p.rapidapi.com";
+
+const headers = {
+  'x-rapidapi-key': '821cf30a80mshfc082b8879a1590p11926djsn23dc9a54a56e',
+  'x-rapidapi-host': 'keto-diet.p.rapidapi.com'
 };
+
+const request = (url: string) => ({
+  url,
+  headers
+});
+
+export const RecipeApi = createApi({
+  reducerPath: "RecipeApi",
+  baseQuery: fetchBaseQuery({ baseUrl: baseURL }),
+  endpoints: (builder) => ({
+    getRecipeData: builder.query({
+      query: ({ lt, gt }) => request(`/?fat_in_grams__lt=${lt}&fat_in_grams__gt=${gt}`)
+    })
+  })
+});
+
+export const { useGetRecipeDataQuery } = RecipeApi;

@@ -1,5 +1,5 @@
+"use client"
 import Link from "next/link";
-import React, { Component } from "react";
 
 const Nutrients = () => {
   const Nutrients = [
