@@ -1,49 +1,4 @@
-/*import Link from "next/link";
-import Image from "next/image";
 
-const Navbar = () => {
-  const NavList = [
-    {
-      id: 1,
-      title: "categories",
-      route: "Categories",
-    },
-    {
-      id: 2,
-      title: "Macronutrients",
-      route: "Macronutrients",
-    },
-    {
-      id: 3,
-      title: "About",
-      route: "About",
-    },
-  ];
-
-  return (
-    <div className=" flex items-center justify-between mx-5">
-      <div>
-        <Image src="/Recipelogo1.jpg" alt="logo" width={74} height={29} />
-      </div>
-      <div>
-      {NavList.map((list) => (
-        <Link key={list.id} href={`/${list.route}`}>
-          <button>
-            <div>
-              <p className="px-4">{list.title}</p>
-            </div>
-          </button>
-        </Link>
-      ))}
-      </div>
-      <div>
-        <p>User</p>
-      </div>
-    </div>
-  );
-};
-
-export default Navbar;*/
 
 "use client";
 import { useState } from 'react';
